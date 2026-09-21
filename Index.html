@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>دعوت‌نامه | پشت خاکریز</title>
+<meta name="description" content="دعوت‌نامه اجرای نمایشنامه پشت خاکریز" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#dcbb8b;
+    --sand-2:#b98d55;
+    --ink:#f7f1e6;
+    --muted:#c9bda9;
+    --bg:#070605;
+    --line:rgba(220,187,139,.28);
+  }
+  {margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:#050403;
+    font-family:'Vazirmatn',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    display:flex;justify-content:center;
+    padding:0 0 48px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .card{
+    width:100%;max-width:560px;
+    background:var(--bg);
+    overflow:hidden;
+    position:relative;
+  }
+
+  / ---------- صفحه ورودی ---------- /
+  .intro{
+    position:fixed;inset:0;z-index:9999;
+    background:linear-gradient(180deg,#070605 0%,#14100b 100%);
+    display:grid;place-items:center;
+    transition:opacity .9s ease, visibility .9s;
+    text-align:center;padding:24px;
+  }
+  .intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+  .intro-content{max-width:340px}
+  .intro-ornament{font-size:52px;margin-bottom:14px;animation:float 3s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .intro h2{
+    font-size:40px;font-weight:900;letter-spacing:-.5px;
+    background:linear-gradient(180deg,#f4e3c4,#dcbb8b,#b98d55);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:18px;
+    filter:drop-shadow(0 2px 12px rgba(0,0,0,.7));
+  }
+  .intro p{font-size:14px;color:var(--muted);margin-bottom:30px;font-weight:300;line-height:2}
+  #enterBtn{
+    font-family:inherit;font-size:15px;font-weight:600;
+    padding:14px 40px;border-radius:100px;
+    border:1px solid rgba(220,187,139,.5);
+    background:linear-gradient(180deg,rgba(220,187,139,.2),rgba(220,187,139,.06));
+    color:var(--sand);cursor:pointer;transition:.25s;
+    letter-spacing:.5px;
+    box-shadow:0 8px 26px rgba(0,0,0,.4);
+  }
+  #enterBtn:hover{background:rgba(220,187,139,.3);transform:translateY(-2px);box-shadow:0 12px 34px rgba(220,187,139,.3)}
+  #enterBtn:active{transform:scale(.96)}
+
+  / ---------- هدر تصویری ---------- /
+  .hero{position:relative;line-height:0}
+  .hero img{width:100%;display:block;object-fit:cover;aspect-ratio:3/4;object-position:center top;
+    filter:saturate(.95) contrast(1.03)}
+  .hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,
+      rgba(7,6,5,.55) 0%,
+      rgba(7,6,5,0) 22%,
+      rgba(7,6,5,0) 58%,
+      rgba(7,6,5,.75) 84%,
+      var(--bg) 100%);
+  }
+  .kicker{
+    position:absolute;top:20px;right:50%;transform:translateX(50%);
+    z-index:2;font-size:15px;font-weight:600;letter-spacing:.5px;
+    padding:7px 22px;border-radius:100px;
+    background:rgba(10,8,6,.72);
+    border:1px solid var(--line);
+    color:var(--sand);backdrop-filter:blur(6px);
+    white-space:nowrap;
+  }
+
+  / ---------- متن ---------- */
+  .body{padding:4px 22px 34px;position:relative;z-index:3;margin-top:-34px;text-align:center}
+
+  h1{
+    font-size:clamp(34px,10vw,46px);
+    font-weight:900;letter-spacing:-.5px;line-height:1.25;
+    background:linear-gradient(180deg,#f4e3c4 0%,var(--sand) 45%,var(--sand-2) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 2px 10px rgba(0,0,0,.6));
+  }
+  .tagline{margin-top:14px;font-size:16px;font-weight:300;line-height:2;color:var(--muted)}
+
+  .ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:24px 0 8px}
+  .ornament span{height:1px;width:64px;background:linear-gradient(90deg,transparent,var(--sand-2),transparent)}
+  .orname
+
+nt i{width:7px;height:7px;transform:rotate(45deg);background:var(--sand);border-radius:1px;
+    box-shadow:0 0 10px rgba(220,187,139,.5)}
+
+  /* ---------- شمارش معکوس ---------- /
+  .countdown{display:flex;justify-content:center;gap:10px;margin:22px 0 6px}
+  .cd{flex:1;max-width:88px;padding:12px 6px 10px;border:1px solid var(--line);border-radius:14px;
+    background:linear-gradient(180deg,rgba(220,187,139,.08),rgba(220,187,139,.01))}
+  .cd b{display:block;font-size:24px;font-weight:700;color:var(--sand);line-height:1}
+  .cd small{display:block;margin-top:6px;font-size:11px;color:var(--muted);font-weight:300}
+
+  / ---------- کارت‌های تاریخ ---------- /
+  h2{margin:36px 0 16px;font-size:14px;font-weight:600;letter-spacing:1px;color:var(--sand);opacity:.85}
+  h2::before,h2::after{content:" — ";opacity:.4}
+
+  .date-card{
+    display:flex;align-items:center;gap:14px;padding:14px;margin-bottom:11px;
+    border:1px solid var(--line);border-radius:16px;
+    background:linear-gradient(135deg,rgba(220,187,139,.09),rgba(220,187,139,.02));
+    text-align:right;transition:.25s;
+  }
+  .date-card:hover{border-color:rgba(220,187,139,.55);background:rgba(220,187,139,.1)}
+
+  .badge{
+    flex:0 0 62px;text-align:center;padding:8px 4px;border-radius:12px;
+    background:linear-gradient(180deg,rgba(220,187,139,.2),rgba(220,187,139,.05));
+    border:1px solid var(--line);
+  }
+  .badge b{display:block;font-size:22px;font-weight:700;color:var(--sand);line-height:1.1}
+  .badge small{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+
+  .info{flex:1;min-width:0}
+  .info h3{font-size:16px;font-weight:600;line-height:1.6}
+  .info p{font-size:13px;font-weight:300;color:var(--muted);margin-top:4px;line-height:1.7}
+
+  .acts{display:flex;flex-direction:column;gap:7px}
+  .acts a{display:grid;place-items:center;width:36px;height:36px;border-radius:11px;
+    border:1px solid var(--line);background:rgba(220,187,139,.07);
+    text-decoration:none;font-size:15px;transition:.2s}
+  .acts a:hover{background:rgba(220,187,139,.22);transform:translateY(-2px)}
+
+  / ---------- عوامل ---------- /
+  .credits{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);text-align:right}
+  .credits h4{font-size:12px;font-weight:600;color:var(--sand);letter-spacing:1px;margin-bottom:6px;opacity:.8}
+  .credits p{font-size:13.5px;font-weight:300;line-height:2.1;color:var(--muted);margin-bottom:14px}
+  .credits p b{color:var(--ink);font-weight:600}
+
+  footer{margin-top:26px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:12px;font-weight:300;color:var(--muted);opacity:.75;line-height:2}
+
+  / ---------- نوار ابزار ---------- /
+  .toolbar{position:fixed;bottom:16px;right:50%;transform:translateX(50%);display:flex;gap:8px;z-index:99}
+  .toolbar button{
+    font-family:inherit;font-size:13px;font-weight:600;
+    padding:11px 20px;border-radius:100px;
+    border:1px solid rgba(220,187,139,.4);
+    background:rgba(15,12,9,.92);color:var(--sand);
+    backdrop-filter:blur(10px);cursor:pointer;
+    box-shadow:0 8px 28px rgba(0,0,0,.6);transition:.2s;
+  }
+  .toolbar button:hover{background:rgba(220,187,139,.18)}
+
+  / ---------- دکمه موسیقی ---------- */
+  .music-btn{
+    position:fixed;top:18px;left:18px;z-index:100;
+    width:46px;height:46px;border-radius:50%;
+    border:1px solid rgba(220,187,139,.4);
+    background:rgba(15,12,9,.85);color:var(--sand);
+    font-size:20px;cursor:pointer;
+    backdrop-filter:blur(10px);
+    box-shadow:0 6px 22px rgba(0,0,0,.5);
+    transition:.25s;display:grid;place-items:center;
+  }
+  .music-btn:hover{background:rgba(220,187,139,.2);transform:scale(1.08)}
+  .music-btn.playing{animation:pulse 1.6s ease-in-out infinite;border-color:var(--sand)}
+  @keyframes pulse{
+    0%,100%{box-shadow:0 0 0 0 rgba(220,187,139,.4)}
+    50%{box-shadow:0 0 0 12px rgba(220,187,139,0)}
+  }
+
+  @media print{.toolbar,.music-btn,.intro{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ============ صفحه ورودی ============ -->
+<div id="intro" class="intro">
+  <div class="intro-content">
+    <div class="intro-ornament">🌾</div>
+    <h2>پ
+
+شت خاکریز</h2>
+    <p>قصه زنانی که زندگی را نگه داشتند…</p>
+    <button id="enterBtn">ورود به دعوت‌نامه</button>
+  </div>
+</div>
+
+<!-- ============ دکمه موسیقی ============ -->
+<button id="musicBtn" class="music-btn" title="پخش/توقف موسیقی">
+  <span class="music-icon">🔇</span>
+</button>
+
+<!-- ============ موسیقی ============ -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="./p.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ============ کارت اصلی ============ -->
+<div class="card" id="card">
+
+  <div class="hero">
+    <img src="./poster.jpg" alt="پوستر نمایشنامه پشت خاکریز">
+    <div class="kicker">اجرای نمایشنامه</div>
+  </div>
+
+  <div class="body">
+
+    <h1>پشت خاکریز</h1>
+    <p class="tagline">قصه زنانی که زندگی را نگه داشتند…</p>
+
+    <div class="ornament"><span></span><i></i><span></span></div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd"><b id="cd-d">۰</b><small>روز</small></div>
+      <div class="cd"><b id="cd-h">۰</b><small>ساعت</small></div>
+      <div class="cd"><b id="cd-m">۰</b><small>دقیقه</small></div>
+      <div class="cd"><b id="cd-s">۰</b><small>ثانیه</small></div>
+    </div>
+
+    <h2>زمان و مکان اجرا</h2>
+
+    <article class="date-card">
+      <div class="badge"><b>۳۱</b><small>شهریور</small></div>
+      <div class="info">
+        <h3>فرهنگسرای اشراق</h3>
+        <p>سالن گلبانگ — ساعت ۱۷:۰۰</p>
+      </div>
+      <div class="acts">
+        <a href="https://www.google.com/maps/search/?api=1&query=فرهنگسرای+اشراق+تهران" target="_blank" rel="noopener" title="مسیریابی">📍</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=نمایشنامه+پشت+خاکریز&dates=20260922T133000Z/20260922T153000Z&location=فرهنگسرای+اشراق+تهران&details=سالن+گلبانگ+ساعت+۱۷" target="_blank" rel="noopener" title="افزودن به تقویم">🗓️</a>
+      </div>
+    </article>
+
+    <article class="date-card">
+      <div class="badge"><b>۲</b><small>مهر</small></div>
+      <div class="info">
+        <h3>فرهنگسرای اشراق</h3>
+        <p>سالن گلبانگ — ساعت ۱۷:۰۰</p>
+      </div>
+      <div class="acts">
+        <a href="https://www.google.com/maps/search/?api=1&query=فرهنگسرای+اشراق+تهران" target="_blank" rel="noopener" title="مسیریابی">📍</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=نمایشنامه+پشت+خاکریز&dates=20260924T133000Z/20260924T153000Z&location=فرهنگسرای+اشراق+تهران&details=سالن+گلبانگ+ساعت+۱۷" target="_blank" rel="noopener" title="افزودن به تقویم">🗓️</a>
+      </div>
+    </article>
+
+    <article class="date-card">
+      <div class="badge"><b>۴</b><small>مهر</small></div>
+      <div class="info">
+        <h3>فرهنگسرای امید</h3>
+        <p>سالن اصلی — ساعت ۱۷:۰۰</p>
+      </div>
+      <div class="acts">
+        <a href="https://www.google.com/maps/search/?api=1&query=فرهنگسرای+امید+تهران" target="_blank" rel="noopener" title="مسیریابی">📍</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=نمایشنامه+پشت+خاکریز&dates=20260926T133000Z/20260926T153000Z&location=فرهنگسرای+امید+تهران&details=ساعت+۱۷" target="_blank" rel="noopener" title="افزودن به تقویم">🗓️</a>
+      </div>
+    </article>
+
+    <article class="date-card">
+      <div class="badge"><b>۵</b><small>مهر</small></div>
+      <div class="info">
+        <h3>فرهنگسرای اخلاق</h3>
+        <p>سالن اصلی — ساعت ۱۷:۰۰</p>
+      </div>
+      <div class="acts">
+        <a href="https://www.google.com/maps/search/?api=1&query=فرهنگسرای+اخلاق+تهران" target="_blank" rel="noopener" title="مسیریابی">📍</a>
+        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=نمایشنامه+پشت+خاکریز&dates=20260927T133000Z/20260927T153000Z&location=فرهنگسرای+اخلاق+تهران&details=ساعت+۱۷" target="_blank" rel="noopener" title="افزودن به تقویم">🗓️</a>
+      </div>
+    </article>
+
+    <div class="credits">
+      <h4>عوامل</h4>
+      <p><b>کارگردان:</b> بهنام حبیب‌پور &nbsp;•&nbsp; <b>نویسنده:</b> سیمین اسکندری</p>
+      <p><b>بازیگران:</b> سیمین اسکندری، مرجان افتخاری، مرضیه پیکامی، آزاده توکلی، حلیا خدابخش، هلیا صرافی، زهرا صلح‌جو، نجمه قاسم‌پور، مهرسا مشایخی، مریم محمدی، مهت
+
+اب محمدیان، پریسا نصیری</p>
+    </div>
+
+    <footer>
+      حضور شما مایه دلگرمی ماست 🌾
+    </footer>
+  </div>
+</div>
+
+<div class="toolbar">
+  <button id="dl">⬇️ دانلود تصویر</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script>
+  /* ---------- شمارش معکوس ---------- /
+  const target = new Date('2026-09-22T17:00:00+03:30').getTime();
+  const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+  function tick(){
+    const diff = target - Date.now();
+    const box = document.getElementById('countdown');
+    if (diff <= 0){ box.innerHTML = '<div class="cd" style="max-width:none;flex:1"><b>اجرا آغاز شد</b></div>'; return; }
+    const s = Math.floor(diff/1000);
+    document.getElementById('cd-d').textContent = fa(Math.floor(s/86400));
+    document.getElementById('cd-h').textContent = fa(Math.floor(s%86400/3600));
+    document.getElementById('cd-m').textContent = fa(Math.floor(s%3600/60));
+    document.getElementById('cd-s').textContent = fa(s%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  / ---------- صفحه ورودی + موسیقی ---------- /
+  const intro    = document.getElementById('intro');
+  const enterBtn = document.getElementById('enterBtn');
+  const bgMusic  = document.getElementById('bgMusic');
+  const musicBtn = document.getElementById('musicBtn');
+  const musicIcon = musicBtn.querySelector('.music-icon');
+
+  enterBtn.addEventListener('click', () => {
+    bgMusic.volume = 0.5;
+    bgMusic.play().then(() => {
+      musicIcon.textContent = '🔊';
+      musicBtn.classList.add('playing');
+    }).catch(e => console.warn('پخش نشد:', e));
+
+    intro.classList.add('hide');
+    document.getElementById('card').animate(
+      [{opacity:0, transform:'translateY(20px)'},{opacity:1, transform:'translateY(0)'}],
+      {duration:800, easing:'ease-out'}
+    );
+  });
+
+  / ---------- دکمه موسیقی ---------- /
+  musicBtn.addEventListener('click', () => {
+    if (bgMusic.paused) {
+      bgMusic.volume = 0.5;
+      bgMusic.play().then(() => {
+        musicIcon.textContent = '🔊';
+        musicBtn.classList.add('playing');
+      }).catch(()=>{});
+    } else {
+      bgMusic.pause();
+      musicIcon.textContent = '🔇';
+      musicBtn.classList.remove('playing');
+    }
+  });
+
+  / ---------- دانلود عکس ---------- */
+  document.getElementById('dl').addEventListener('click', async () => {
+    const btn = document.getElementById('dl');
+    const card = document.getElementById('card');
+    btn.textContent = 'در حال ساخت…';
+    try{
+      const canvas = await html2canvas(card, {
+        scale: Math.max(2, 1080 / card.offsetWidth),
+        backgroundColor: '#070605',
+        useCORS: true,
+        logging: false
+      });
+      const a = document.createElement('a');
+      a.download = 'invitation-pasht-khakriz.png';
+      a.href = canvas.toDataURL('image/png');
+      a.click();
+      btn.textContent = '✅ دانلود شد';
+    }catch(e){
+      btn.textContent = '❌ نشد — اسکرین‌شات بگیر';
+      console.error(e);
+    }
+    setTimeout(() => btn.textContent = '⬇️ دانلود تصویر', 2500);
+  });
+</script>
+</body>
+</html>
